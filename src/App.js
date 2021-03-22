@@ -1,7 +1,11 @@
+import { CssBaseline } from '@material-ui/core';
+import Navbar from './components/Navbar/Navbar';
+
 function App() {
   return (
-    <div className="App">
-      <h1>Hello World</h1>
+    <div className='App'>
+      <CssBaseline />
+      <Navbar />
     </div>
   );
 }
