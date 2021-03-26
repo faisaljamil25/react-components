@@ -37,4 +37,73 @@ export default makeStyles((theme) => ({
   list: {
     flexGrow: 0.8,
   },
+  link: {
+    position: 'relative',
+    '&:hover': {
+      color: theme.palette.secondary.main,
+      textDecoration: 'none',
+      background: 'none',
+      border: 'none',
+      outline: 'none',
+    },
+    '&::after': {
+      content: '""',
+      position: 'absolute',
+      left: '50%',
+      bottom: 0,
+      width: 0,
+      height: '2px',
+      transform: 'translate(-50%, 0)',
+      backgroundColor: '#ffffff',
+      transition: 'all 0.2s ease',
+    },
+    '&:hover::after': {
+      width: '80%',
+    },
+    // '&::after': {
+    //   content: '',
+    //   position: 'absolute',
+    //   left: '50%',
+    //   bottom: 0,
+    //   width: '80%',
+    //   height: '2px',
+    //   backgroundColor: '#ffffff',
+    // },
+  },
 }));
+/*
+
+.nav-link {
+  position: relative;
+}
+.nav-link:hover {
+  color: white !important;
+}
+
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 80%;
+  height: 2px;
+  background-color: #ffffff;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  transform: translate(-50%, 0);
+  background-color: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover::after {
+  width: 80%;
+}
+
+*/

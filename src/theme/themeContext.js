@@ -15,12 +15,13 @@ export function toggleMode(setTheme) {
       `${oldTheme.palette.type === 'dark' ? 'light' : 'dark'}`
     );
     return createMuiTheme({
+      ...oldTheme,
       palette: {
         primary: {
           main: oldTheme.palette.primary.main,
         },
         secondary: {
-          main: oldTheme.palette.primary.main,
+          main: oldTheme.palette.secondary.main,
         },
         type: oldTheme.palette.type === 'dark' ? 'light' : 'dark',
       },
