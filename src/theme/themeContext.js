@@ -10,6 +10,10 @@ export const themeContext = React.createContext({
 
 export function toggleMode(setTheme) {
   setTheme((oldTheme) => {
+    window.localStorage.setItem(
+      'theme',
+      `${oldTheme.palette.type === 'dark' ? 'light' : 'dark'}`
+    );
     return createMuiTheme({
       palette: {
         primary: {

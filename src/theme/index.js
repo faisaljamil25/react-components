@@ -3,7 +3,7 @@ import { defaultMode } from './themeContext';
 
 const theme = createMuiTheme({
   palette: {
-    type: defaultMode,
+    type: window.localStorage.getItem('theme') || defaultMode,
     primary: {
       // light: will be calculated from palette.primary.main,
       main: '#ff4400',
