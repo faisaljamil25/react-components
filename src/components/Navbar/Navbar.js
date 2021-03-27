@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   AppBar,
-  Button,
   Typography,
   IconButton,
   Toolbar,
@@ -10,6 +9,7 @@ import {
   ListItem,
   ListItemText,
   Grid,
+  Link,
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
@@ -50,7 +50,9 @@ const Navbar = () => {
             <List>
               {menuList.map((item, index) => (
                 <ListItem button key={index}>
-                  <ListItemText primary={item} />
+                  <ListItemText>
+                    <Typography variant='h6'>{item}</Typography>
+                  </ListItemText>
                 </ListItem>
               ))}
             </List>
@@ -67,7 +69,7 @@ const Navbar = () => {
   );
   return (
     <div className={classes.root}>
-      <AppBar position='sticky'>
+      <AppBar position='sticky' className={classes.navbar}>
         <Toolbar>
           <img
             src='/assets/firefox.svg'
@@ -75,15 +77,20 @@ const Navbar = () => {
             alt='fb'
             className={classes.brandImg}
           />
-          <Typography className={classes.title} variant='h6' noWrap>
+          <Typography
+            className={classes.title}
+            variant='h5'
+            noWrap
+            color='inherit'
+          >
             Firefox
           </Typography>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
             {menuList.map((item, index) => (
-              <Button color='inherit' key={index}>
+              <Link key={index} className={classes.link} color='inherit'>
                 {item}
-              </Button>
+              </Link>
             ))}
           </div>
           <div className={classes.sectionMobile}>

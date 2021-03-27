@@ -5,6 +5,10 @@ export default makeStyles((theme) => ({
     minHeight: '10vh',
     flexGrow: 1,
   },
+  navbar: {
+    // background: 'none', // to remove default appbar styling
+    // boxShadow: 'none',
+  },
   grow: {
     flexGrow: 1,
   },
@@ -26,84 +30,20 @@ export default makeStyles((theme) => ({
       display: 'none',
     },
   },
+  link: {
+    marginLeft: theme.spacing(3),
+    fontSize: '1.2rem',
+    cursor: 'pointer',
+  },
 
   // Drawer
   drawer: {
     width: window.innerWidth,
   },
   closeIcon: {
-    marginTop: theme.spacing(2),
+    marginTop: theme.spacing(1),
   },
-  list: {
-    flexGrow: 0.8,
-  },
-  link: {
-    position: 'relative',
-    '&:hover': {
-      color: theme.palette.secondary.main,
-      textDecoration: 'none',
-      background: 'none',
-      border: 'none',
-      outline: 'none',
-    },
-    '&::after': {
-      content: '""',
-      position: 'absolute',
-      left: '50%',
-      bottom: 0,
-      width: 0,
-      height: '2px',
-      transform: 'translate(-50%, 0)',
-      backgroundColor: '#ffffff',
-      transition: 'all 0.2s ease',
-    },
-    '&:hover::after': {
-      width: '80%',
-    },
-    // '&::after': {
-    //   content: '',
-    //   position: 'absolute',
-    //   left: '50%',
-    //   bottom: 0,
-    //   width: '80%',
-    //   height: '2px',
-    //   backgroundColor: '#ffffff',
-    // },
+  listItem: {
+    fontSize: '1.8rem',
   },
 }));
-/*
-
-.nav-link {
-  position: relative;
-}
-.nav-link:hover {
-  color: white !important;
-}
-
-.nav-link.active::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  width: 80%;
-  height: 2px;
-  background-color: #ffffff;
-}
-
-.nav-link::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  width: 0;
-  height: 2px;
-  transform: translate(-50%, 0);
-  background-color: #ffffff;
-  transition: all 0.2s ease;
-}
-
-.nav-link:hover::after {
-  width: 80%;
-}
-
-*/
